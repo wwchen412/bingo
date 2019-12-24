@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BINGO FFN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bingo">
+        <h1>搖滾吧！賓果 </h1>
+        <h2>_ _ _</h2>
+       
+        <div>
+          <button onclick="getAwards(5)">抽獎</button>
+          <button onclick="getAwards(1)">單抽</button>
+        </div>
+        
+      </div>
+      <h3 class="fixBottim"></h3>
+</body>
+<script>
+
+console.clear();
+let numberArray = [];
+let temArray =[];
+// 取得號碼
+function getAwards(times){
+   let math = Math.floor(Math.random()*75)+1;
+   checkNum(math,times);  
+}
+// 驗證號碼是否重複
+function checkNum(num,times){
+  let checkIndex = numberArray.indexOf(num);
+  let doTimes = times;
+//如果數字沒有重複
+  if(checkIndex == -1){
+    temArray.push(num)
+    numberArray.push(num)
+     if(1 < doTimes){
+       doTimes = doTimes - 1;
+      getAwards(doTimes)
+    }else{
+      document.querySelector("h2").innerHTML = '';
+      printArray();
+    }
+  }else{
+    getAwards(doTimes)
+  }
+   
+}
+
+
+function printArray(){
+    for(let i =0;i<temArray.length;i++){
+      document.querySelector("h2").innerHTML += "<span>" +temArray[i] + "</span>" 
+    } 
+    temArray = [];
+   document.querySelector("h3").innerHTML =  numberArray.sort(sortNumber).join(" , ") ;
+  
+}
+
+function sortNumber(a, b) {
+  return a - b;
+}
+
+
+
+
+
+</script>
+</html>

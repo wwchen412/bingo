@@ -1,0 +1,68 @@
+*{
+    margin:0;
+    padding: 0;
+    outline: 0;
+}
+body{
+    text-align: center;
+    font-family: Arial,"微軟正黑體";
+    background-image:url('img/bg.png');
+    background-size: cover;
+    color: #fff;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height:100vh;
+    position: relative;
+    width: 100%;
+  }
+  div.bingo{
+    background-image: linear-gradient(to right bottom,#FF5858,#FF9434);
+    width: 600px;
+    height: 400px;
+    margin:auto;
+    padding: 1rem;
+    border-radius: 2rem;
+    background:rgba(#fff,.1);
+    box-shadow:0 0 30px rgba(#333,.6);
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    justify-content: space-around;
+  }
+  span{
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    border-radius: 50%;
+    padding:.5rem;
+    margin:10px;
+    font-size: 2rem;
+    line-height:70px;
+    border:2px solid #fff;
+    font-weight: 100;
+  }
+  h1{
+      font-size: 48px;
+  }
+  button{
+    -webkit-appearance: none;
+    border: 2px solid #fff;
+    background: transparent;
+    width:150px;
+    height: 70px;
+    font-size: 25px;
+    color:#fff;
+     border-radius: 2rem;
+    margin:auto;
+  }
+  h3{
+    font-size: 36px;
+  }
+  .fixBottim{
+      position: absolute;
+      bottom: 10px;
+      left: 0px;
+      text-align: center;
+      width: 100%;
+  }
