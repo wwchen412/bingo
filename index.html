@@ -65,7 +65,12 @@ function sortNumber(a, b) {
   return a - b;
 }
 
+window.addEventListener("beforeunload", function (e) {
+  var confirmationMessage = "\o/";
 
+  (e || window.event).returnValue = confirmationMessage;     // Gecko and Trident
+  return confirmationMessage;                                // Gecko and WebKit
+}); 
 
 
 
